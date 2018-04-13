@@ -1,7 +1,4 @@
-<H1>
-  Create an Article
-</H1>
-
+<H1>Edit Article: <% @article.id %></H1>
 <% if @article.errors.any? %>
 <H2>
   The following errors occured
@@ -25,7 +22,6 @@
 <p>
   <%= a.submit %>
 </p>
-
 <% end %>
 
 <%= link_to "Back to all articles", articles_path %>
