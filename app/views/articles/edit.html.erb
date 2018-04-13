@@ -1,27 +1,4 @@
 <H1>Edit Article: <% @article.id %></H1>
-<% if @article.errors.any? %>
-<H2>
-  The following errors occured
-</H2>
-<ul>
-  <% @article.errors.full_messages.each do |message| %>
-  <li><%= message %></li>
-  <% end %>
-</ul>
-<% end %>
-
-<%= form_for @article do |a| %>
-<p>
-  <%= a.label :title %>
-  <%= a.text_field :title %>
-</p>
-<p align='vtop'>
-  <%= a.label :description %>
-  <%= a.text_area :description %>
-</p>
-<p>
-  <%= a.submit %>
-</p>
-<% end %>
-
+<%= render 'error_message' %>
+<%= render 'form' %>
 <%= link_to "Back to all articles", articles_path %>
